@@ -1,6 +1,6 @@
 from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai.chat_models import ChatOpenAI
+from langchain_ollama.chat_models import ChatOllama
 
 from graph.state import AgentState, show_agent_reasoning
 
@@ -70,7 +70,7 @@ def portfolio_management_agent(state: AgentState):
         }
     )
     # Invoke the LLM
-    llm = ChatOpenAI(model="gpt-4o")
+    llm = ChatOllama(model="llama3")
     result = llm.invoke(prompt)
 
     # Create the portfolio management message
